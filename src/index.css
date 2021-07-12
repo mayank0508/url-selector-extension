@@ -61,7 +61,7 @@ a {
 
 h3 {
   font-size: 50px;
-  background: -webkit-linear-gradient(rgb(255, 1, 157), rgb(66, 4, 68));
+  background: linear-gradient(rgb(255, 1, 157), rgb(66, 4, 68));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -69,6 +69,8 @@ h3 {
 
 footer {
   text-align: center;
-} a:link {
-  color: rgb(0, 174, 255);
 }
+:link {
+  color: rgb(0, 140, 255);
+}
+
