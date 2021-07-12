@@ -1,0 +1,74 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 5px;
+  margin: 0;
+  padding: 10px;
+  min-width: 500px;
+}
+
+button {
+  width: 25%;
+  color: white;
+  background: none;
+  text-decoration: inherit;
+  font-family: inherit;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 10;
+  border-radius: inherit;
+}
+
+.border-gradient {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+}
+
+#button-el {
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  padding: 10px 10 10 10;
+}
+
+#input-el {
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  font-family: inherit;
+  font-size: 17px;
+  width: 100%;
+  padding: 10px 10 10 10;
+}
+
+#ul-el {
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 1px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+li {
+  padding: 2px;
+}
+
+a {
+}
+
+h3 {
+  font-size: 50px;
+  background: -webkit-linear-gradient(rgb(255, 1, 157), rgb(66, 4, 68));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+} a:link {
+  color: rgb(0, 174, 255);
+}
