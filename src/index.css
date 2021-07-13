@@ -80,3 +80,8 @@ footer {
 :link {
   color: rgb(0, 140, 255);
 }
+
+span {
+  display: block;
+  color: white;
+}
