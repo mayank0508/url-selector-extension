@@ -11,16 +11,9 @@ const deleteBtnEl = document.getElementById('delete-el');
 
 deleteBtnEl.addEventListener('dblclick', function () {
   localStorage.clear();
-});
-
-urlFromLocalStorage = localStorage.getItem('myUrl');
-urlConverted = JSON.parse(urlFromLocalStorage);
-console.log(urlConverted);
-
-if (urlConverted) {
-  myUrl = urlConverted;
+  myUrl = [];
   renderUrl();
-}
+});
 
 buttonClicked.addEventListener('click', function () {
   myUrl.push(inputEl.value);
@@ -28,6 +21,7 @@ buttonClicked.addEventListener('click', function () {
   localStorage.setItem('myUrl', JSON.stringify(myUrl));
   renderUrl();
 });
+
 
 function renderUrl() {
   let listItems = '';
@@ -46,3 +40,16 @@ function renderUrl() {
   // li.textContent = myLead[i]
   // ulEl.appendChild(li);
 }
+
+
+urlFromLocalStorage = localStorage.getItem('myUrl');
+urlConverted = JSON.parse(urlFromLocalStorage);
+console.log(urlConverted);
+
+if (urlConverted) {
+  myUrl = urlConverted;
+  renderUrl();
+}
+
+
+
