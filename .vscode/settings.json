@@ -1,0 +1,14 @@
+{
+  "grammarly.overrides": [
+    {
+      "files": ["**/manifest.json"],
+      "config": {
+        "audience": "general",
+        "dialect": "british",
+        "domain": "academic",
+        "emotions": ["optimistic"],
+        "goals": ["inform", "describe"]
+      }
+    }
+  ]
+}

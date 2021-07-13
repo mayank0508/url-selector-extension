@@ -13,13 +13,14 @@ let tabBtnEl = document.getElementById('save-el');
 // console.log(localStorage.getItem('myUrl'));
 // localStorage.clear();
 
-const tabs = [{ url: 'http://www.linkedin.com/in/mayank0508' }];
+tabBtnEl.addEventListener('click', function () {
+  /// this is the way we make a save btn feature
 
-tabBtnEl.addEventListener('click', function () {    /// this is the way we make a save btn feature
-  
-  myUrl.push(tabs[0].url);
-  localStorage.setItem('myUrl', JSON.stringify(myUrl));
-  render(myUrl);
+  chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {   //this code allows us to get the hold of the 
+    myUrl.push(tabs[0].url);                                                  //Chrome API that allows us to interacr from the tabs !!!!
+    localStorage.setItem('myUrl', JSON.stringify(myUrl));
+    render(myUrl);
+  }); 
 });
 
 if (urlConverted) {
@@ -51,7 +52,8 @@ deleteBtnEl.addEventListener('dblclick', function () {
   render(myUrl);
 });
 
-buttonClicked.addEventListener('click', function () {   /// this the way we push the data put inside the input element to the localStorage 💾
+buttonClicked.addEventListener('click', function () {
+  /// this the way we push the data put inside the input element to the localStorage 💾
   myUrl.push(inputEl.value);
   inputEl.value = '';
   localStorage.setItem('myUrl', JSON.stringify(myUrl));
