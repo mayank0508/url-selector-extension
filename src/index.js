@@ -1,4 +1,5 @@
 let myUrl = [];
+let oldUrl = [];
 const buttonClicked = document.getElementById('button-el');
 const inputEl = document.getElementById('input-el');
 const ulEl = document.getElementById('ul-el');
@@ -9,25 +10,16 @@ const deleteBtnEl = document.getElementById('delete-el');
 // console.log(localStorage.getItem('myUrl'));
 // localStorage.clear();
 
-deleteBtnEl.addEventListener('dblclick', function () {
-  localStorage.clear();
-  myUrl = [];
-  renderUrl();
-});
+if (urlConverted) {
+  myUrl = urlConverted;
+  render(myUrl);
+}
 
-buttonClicked.addEventListener('click', function () {
-  myUrl.push(inputEl.value);
-  inputEl.value = '';
-  localStorage.setItem('myUrl', JSON.stringify(myUrl));
-  renderUrl();
-});
-
-
-function renderUrl() {
+function render(url) {
   let listItems = '';
-  for (let i = 0; i < myUrl.length; i++) {
+  for (let i = 0; i < url.length; i++) {
     listItems += `<li>
-    <a target ="_blank" href='${myUrl[i]}'> ${myUrl[i]}</a> 
+    <a target ="_blank" href='${url[i]}'> ${url[i]}</a> 
     </li>`;
     {
       /* 👆 very imp code*/
@@ -41,15 +33,19 @@ function renderUrl() {
   // ulEl.appendChild(li);
 }
 
+deleteBtnEl.addEventListener('dblclick', function () {
+  localStorage.clear();
+  myUrl = [];
+  render(myUrl);
+});
 
-urlFromLocalStorage = localStorage.getItem('myUrl');
-urlConverted = JSON.parse(urlFromLocalStorage);
-console.log(urlConverted);
+// urlFromLocalStorage = localStorage.getItem('myUrl');
+// urlConverted = JSON.parse(urlFromLocalStorage);
+// console.log(urlConverted);
 
-if (urlConverted) {
-  myUrl = urlConverted;
-  renderUrl();
-}
-
-
-
+buttonClicked.addEventListener('click', function () {
+  myUrl.push(inputEl.value);
+  inputEl.value = '';
+  localStorage.setItem('myUrl', JSON.stringify(myUrl));
+  render(myUrl);
+});
