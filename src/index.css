@@ -1,18 +1,15 @@
 body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
-  display: grid;
-  grid-template-columns: auto;
+  display: block;
   background-color: black;
   border-radius: 5px;
-  margin: 0;
+  margin: 20px;
   padding: 10px;
   min-width: 500px;
 }
 
 button {
-  display: flex;
-  flex-direction: row;
   width: 25%;
   color: white;
   background: none;
@@ -36,6 +33,11 @@ button {
 }
 
 #delete-el {
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  padding: 10px 10 10 10;
+}
+
+#save-el {
   border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
   padding: 10px 10 10 10;
 }
@@ -67,7 +69,7 @@ a {
 }
 
 h3 {
-  font-size: 50px;
+  font-size: 60px;
   background: linear-gradient(rgb(255, 1, 157), rgb(66, 4, 68));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
