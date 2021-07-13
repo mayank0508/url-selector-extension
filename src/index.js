@@ -2,19 +2,31 @@ let myUrl = [];
 const buttonClicked = document.getElementById('button-el');
 const inputEl = document.getElementById('input-el');
 const ulEl = document.getElementById('ul-el');
+const deleteBtnEl = document.getElementById('delete-el');
 // here we learn how to convert arrays into strings, using the JSON format
 
 // localStorage.setItem('myUrl', 'www.google.com');  // this a way to save a link in the local storage
 // console.log(localStorage.getItem('myUrl'));
 // localStorage.clear();
 
+deleteBtnEl.addEventListener('dblclick', function () {
+  localStorage.clear();
+});
+
+urlFromLocalStorage = localStorage.getItem('myUrl');
+urlConverted = JSON.parse(urlFromLocalStorage);
+console.log(urlConverted);
+
+if (urlConverted) {
+  myUrl = urlConverted;
+  renderUrl();
+}
+
 buttonClicked.addEventListener('click', function () {
   myUrl.push(inputEl.value);
   inputEl.value = '';
   localStorage.setItem('myUrl', JSON.stringify(myUrl));
   renderUrl();
-
-  console.log(localStorage.getItem('myUrl'));
 });
 
 function renderUrl() {

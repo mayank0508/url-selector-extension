@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.0",
+  "version": "1.0.1",
   "name": "url Selector",
   "action": {
     "default_popup": "src/index.html",
